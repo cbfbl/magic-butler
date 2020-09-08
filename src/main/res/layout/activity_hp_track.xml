@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".hpTrack">
+
+    <View
+        android:id="@+id/hp_divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:keepScreenOn="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/hp_team1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/team_1_hp"
+        android:rotation="180"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/hp_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hp_team2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/team_2_hp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hp_divider" />
+
+    <Button
+        android:id="@+id/team_1_plus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:tag="team_1"
+        android:text="@string/plus_one_hp"
+        app:layout_constraintBottom_toTopOf="@+id/hp_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toEndOf="@+id/hp_team1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <Button
+        android:id="@+id/team_1_minus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:tag="team_1"
+        android:text="@string/minus_one_hp"
+        app:layout_constraintBottom_toTopOf="@+id/hp_divider"
+        app:layout_constraintEnd_toStartOf="@+id/hp_team1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <Button
+        android:id="@+id/team_2_minus1"
+        android:tag="team_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:text="@string/minus_one_hp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/hp_team2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hp_divider" />
+
+    <Button
+        android:id="@+id/team_2_plus1"
+        android:tag="team_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:text="@string/plus_one_hp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hp_team2"
+        app:layout_constraintTop_toBottomOf="@+id/hp_divider" />
+
+    <Button
+        android:id="@+id/move_to_teams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="moveToTeams"
+        android:text="@string/move_to_teams"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temp_hp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:text="@string/zero"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/hp_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hp_team1" />
+
+    <TextView
+        android:id="@+id/temp_hp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/hp_team2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hp_divider" />
+
+    <Button
+        android:id="@+id/team_2_minus5"
+        android:tag="team_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:text="@string/minus_five_hp"
+        app:layout_constraintBottom_toTopOf="@+id/team_2_minus1"
+        app:layout_constraintEnd_toStartOf="@+id/temp_hp2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hp_divider" />
+
+    <Button
+        android:id="@+id/team_2_plus5"
+        android:tag="team_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:text="@string/plus_five_hp"
+        app:layout_constraintBottom_toTopOf="@+id/team_2_plus1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/temp_hp2"
+        app:layout_constraintTop_toBottomOf="@+id/hp_divider" />
+
+    <Button
+        android:id="@+id/team_1_minus5"
+        android:tag="team_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:rotation="180"
+        android:text="@string/minus_five_hp"
+        app:layout_constraintBottom_toTopOf="@+id/hp_divider"
+        app:layout_constraintEnd_toStartOf="@+id/temp_hp1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_minus1" />
+
+    <Button
+        android:id="@+id/team_1_plus5"
+        android:tag="team_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeHp"
+        android:rotation="180"
+        android:text="@string/plus_five_hp"
+        app:layout_constraintBottom_toTopOf="@+id/hp_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/temp_hp1"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_plus1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

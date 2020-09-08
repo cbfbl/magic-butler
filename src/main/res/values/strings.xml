@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Magiccc</string>
+    <string name="gen_random_teams">Generate random teams</string>
+    <string name="to_be_changed">Team 1\nTeam 2</string>
+    <string name="player1">P1</string>
+    <string name="player2">P2</string>
+    <string name="player3">P3</string>
+    <string name="player4">P4</string>
+    <string name="player5">P5</string>
+    <string name="player6">P6</string>
+    <string name="player7">P7</string>
+    <string name="not_enough_players">Error, Please Check more than 4 Options</string>
+    <string name="team_1_hp">30</string>
+    <string name="team_2_hp">30</string>
+    <string name="minus_one_hp">-</string>
+    <string name="plus_one_hp">+</string>
+    <string name="move_to_hp">Hp section</string>
+    <string name="move_to_teams">Teams section</string>
+    <string name="zero">"0"</string>
+    <string name="plus_five_hp">"+5"</string>
+    <string name="minus_five_hp">"-5"</string>
+
+</resources>
